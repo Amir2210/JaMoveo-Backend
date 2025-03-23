@@ -30,7 +30,9 @@ if (process.env.NODE_ENV === 'production') {
   app.use(cors(corsOptions))
 }
 
-
+// routes
+import { authRoutes } from './api/auth/auth.routes.js'
+app.use('/api/auth', authRoutes)
 
 
 app.get('/**', (req, res) => {
