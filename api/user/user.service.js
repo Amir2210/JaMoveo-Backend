@@ -39,7 +39,6 @@ async function add(user) {
         const userToAdd = {
             username: user.username,
             password: user.password,
-            fullname: user.fullname,
             instrument: user.instrument,
             isAdmin: user.isAdmin
         }

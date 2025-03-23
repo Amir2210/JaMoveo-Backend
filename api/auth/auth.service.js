@@ -24,20 +24,20 @@ async function login(username, password) {
     return user
 }
 
-async function signup({ username, password, fullname, instrument, isAdmin }) {
+async function signup({ username, password, instrument, isAdmin }) {
     const saltRounds = 10
 
-    if (!username || !password || !fullname || !instrument) throw 'Missing required signup information'
+    if (!username || !password || !instrument) throw 'Missing required signup information'
 
     const userExist = await userService.getByUsername(username)
     if (userExist) throw 'Username already taken'
 
     const hash = await bcrypt.hash(password, saltRounds)
-    return userService.add({ username, password: hash, fullname, instrument, isAdmin })
+    return userService.add({ username, password: hash, instrument, isAdmin })
 }
 
 function getLoginToken(user) {
-    const userInfo = { _id: user._id, fullname: user.fullname, isAdmin: user.isAdmin }
+    const userInfo = { _id: user._id, isAdmin: user.isAdmin }
     return cryptr.encrypt(JSON.stringify(userInfo))
 }
 
