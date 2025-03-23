@@ -34,6 +34,9 @@ if (process.env.NODE_ENV === 'production') {
 import { authRoutes } from './api/auth/auth.routes.js'
 app.use('/api/auth', authRoutes)
 
+import { setupSocketAPI } from './services/socket.service.js'
+setupSocketAPI(server)
+
 
 app.get('/**', (req, res) => {
   res.sendFile(path.resolve('public/index.html'))
