@@ -12,6 +12,9 @@ export function setupSocketAPI(server) {
         socket.on('disconnect', socket => {
             console.log(`Socket disconnected [id: ${socket.id}]`)
         })
+        socket.on('admin-set-song', song => {
+            socket.broadcast.emit('admin-choose-song', song)
+        })
 
         socket.on('set-user-socket', userId => {
             console.log(`Setting socket.userId = ${userId} for socket [id: ${socket.id}]`)
