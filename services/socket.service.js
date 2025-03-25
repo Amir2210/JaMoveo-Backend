@@ -1,5 +1,4 @@
 import { Server } from 'socket.io'
-
 var gIo = null
 export function setupSocketAPI(server) {
     gIo = new Server(server, {
