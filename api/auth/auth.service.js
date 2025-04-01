@@ -9,7 +9,6 @@ export const authService = {
     signup,
     login,
     getLoginToken,
-    validateToken
 }
 
 async function login(username, password) {
@@ -39,16 +38,4 @@ async function signup({ username, password, instrument, isAdmin }) {
 function getLoginToken(user) {
     const userInfo = { _id: user._id, isAdmin: user.isAdmin }
     return cryptr.encrypt(JSON.stringify(userInfo))
-}
-
-function validateToken(loginToken) {
-    try {
-        const json = cryptr.decrypt(loginToken)
-        const loggedinUser = JSON.parse(json)
-        return loggedinUser
-
-    } catch (err) {
-        console.log('Invalid login token')
-    }
-    return null
 }
