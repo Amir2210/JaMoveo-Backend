@@ -1,7 +1,7 @@
-# 🎵 JaMoveo  
+# 🎵 SingRoom  
 **Real-Time Collaborative Music Rehearsal Platform**  
 
-JaMoveo is a **web application** that enables musicians to **rehearse together remotely**. Users can log in, select their instrument, and join a session where an **admin user controls the song selection and display**. The platform synchronizes song lyrics and chords in real time, ensuring a seamless rehearsal experience.  
+SingRoom is a **web application** that enables musicians to **rehearse together remotely**. Users can log in, select their instrument, and join a session where an **admin user controls the song selection and display**. The platform synchronizes song lyrics and chords in real time, ensuring a seamless rehearsal experience.  
 
 ## 🚀 Features  
 - ✅ **User Authentication** – Log in and register as a musician.  
